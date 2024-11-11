@@ -1,0 +1,28 @@
+This Python script fetches and analyzes the option chain data for NIFTY and HDFC Bank from the National Stock Exchange (NSE) of India.
+It processes the data into a structured format, visualizes key metrics, and provides insights on Open Interest (OI) trends, Implied Volatility (IV), and changes in OI at different strike prices.
+Setup Headers for NSE Access: NSE requires certain headers, including a valid user-agent and specific language settings.
+1. Importing Libraries
+ requests - For making HTTP requests to NSE APIs.
+ pandas - For data manipulation and structuring.
+ time, json, datetime - For timing, JSON handling, and date management.
+ matplotlib.pyplot - For data visualization.
+NSE Data URLs and Headers
+
+    URLs:
+        nifty_url for NIFTY option chain.
+        HDFC_url for HDFC Bank option chain.
+Headers:
+
+    header dictionary is configured to mimic a browser request.
+Data Collection and Session Management
+
+    Session Setup:
+        Establishes a session using requests.Session() to maintain consistent headers across requests.
+
+    Fetching Data:
+        Uses the session to fetch data for NIFTY and HDFC Bank.
+        JSON responses are parsed for further analysis.
+Data Parsing and Structuring
+
+    Looping through Option Data:
+        Iterates over the fetched data to extract strikePrice, expiryDate, and key metrics for both Call (CE) and Put (PE) options like Open Interest (OI), Change in OI, Last Price, Bid Quantity, and Ask Quantity.
